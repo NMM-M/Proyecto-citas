@@ -11,16 +11,17 @@
                     <form method="POST" action="{{ route('login') }}" role="form">
                         @csrf
                         @if ($errors->any())
-                            <div class="alert alert-danger" role="alert">
+                        <div class="alert alert-danger" role="alert">
                             <strong>Error!</strong> {{$errors->first()}}
-                            </div>
+                        </div>
                         @endif
                         <div class="form-group mb-3">
                             <div class="input-group input-group-alternative">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                                 </div>
-                                <input name="email" id="email" class="form-control" placeholder="Email" type="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                <input name="email" id="email" class="form-control" placeholder="Email" type="email"
+                                    value="{{ old('email') }}" required autocomplete="email" autofocus>
                             </div>
                         </div>
                         <div class="form-group">
@@ -28,12 +29,13 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                                 </div>
-                                <input name="password" id="password" class="form-control" placeholder="Contraseña" type="password" required autocomplete="current-password">
+                                <input name="password" id="password" class="form-control" placeholder="Contraseña"
+                                    type="password" required autocomplete="current-password">
                             </div>
                         </div>
                         <div class="custom-control custom-control-alternative custom-checkbox">
                             <input name="remember" id="remember" class="custom-control-input" type="checkbox"
-                                {{ old('remember') ? 'checked' : '' }}>
+                                value="{{ old('remember') ? 'checked' : '' }}">
                             <label class="custom-control-label" for="remember">
                                 <span class="text-muted">Recordar sesion</span>
                             </label>

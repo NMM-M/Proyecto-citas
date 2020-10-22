@@ -20,3 +20,15 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+//Specialty
+Route::get('/specialties', 'SpecialtyController@index')->name('Specialty');
+Route::get('/specialties/create', 'SpecialtyController@create')->name('SpecialtyCreate'); //registro
+Route::get('/specialties/{specialty}/edit', 'SpecialtyController@edit')->name('SpecialtyEdit');
+
+Route::post('/specialties', 'SpecialtyController@store'); // envio del form
+Route::put('/specialties/{specialty}','SpecialtyController@update');
+Route::delete('/specialties/{specialty}','SpecialtyController@destroy');
+//Doctors
+Route::resource('doctors','DoctorController');
+//Patients

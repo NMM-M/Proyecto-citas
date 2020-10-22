@@ -36,12 +36,25 @@
                             <div class="input-group input-group-alternative mb-3">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">
+                                        <i class="ni ni-hat-3">
+                                        </i>
+                                    </span>
+                                </div>
+                                <input autocomplete="rut" autofocus="" class="form-control" id="rut" name="rut"
+                                    placeholder="Ingrese su Rut" required type="text" value="{{ old('rut') }}">
+                                </input>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group input-group-alternative mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
                                         <i class="ni ni-email-83">
                                         </i>
                                     </span>
                                 </div>
                                 <input autocomplete="email" class="form-control" id="email" name="email"
-                                    placeholder="Email" required="" type="email" value="{{ old('email') }}">
+                                    placeholder="Email" required type="email" value="{{ old('email') }}">
                                 </input>
                             </div>
                         </div>
@@ -54,7 +67,7 @@
                                     </span>
                                 </div>
                                 <input class="form-control" id="password" name="password" placeholder="Contraseña"
-                                    required="" type="password">
+                                    required type="password">
                                 </input>
                             </div>
                         </div>
