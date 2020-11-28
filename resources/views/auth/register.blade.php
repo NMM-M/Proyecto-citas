@@ -9,16 +9,16 @@
         <div class="col-lg-6 col-md-8">
             <div class="card bg-secondary shadow border-0">
                 <div class="card-body px-lg-5 py-lg-5">
-                    <form action="{{ route('register') }}" method="POST" role="form">
-                        @csrf
                         @if ($errors->any())
-                        <div class="alert alert-danger" role="alert">
-                            <strong>
-                                Error!
+                            <div class="alert alert-danger" role="alert">
+                                <strong>
+                                    Error!
                             </strong>
                             {{$errors->first()}}
-                        </div>
+                            </div>
                         @endif
+                    <form action="{{ route('register') }}" method="POST" role="form">
+                        @csrf                        
                         <div class="form-group">
                             <div class="input-group input-group-alternative mb-3">
                                 <div class="input-group-prepend">
@@ -28,8 +28,7 @@
                                     </span>
                                 </div>
                                 <input autocomplete="name" autofocus="" class="form-control" id="name" name="name"
-                                    placeholder="Nombre" required="" type="text" value="{{ old('name') }}">
-                                </input>
+                                    placeholder="Nombre" required="" type="text" value="{{ old('name') }}"/>
                             </div>
                         </div>
                         <div class="form-group">
@@ -41,8 +40,7 @@
                                     </span>
                                 </div>
                                 <input autocomplete="rut" autofocus="" class="form-control" id="rut" name="rut"
-                                    placeholder="Ingrese su Rut" required type="text" value="{{ old('rut') }}">
-                                </input>
+                                    placeholder="Ingrese su Rut" required type="text" value="{{ old('rut') }}"/>
                             </div>
                         </div>
                         <div class="form-group">
@@ -54,8 +52,7 @@
                                     </span>
                                 </div>
                                 <input autocomplete="email" class="form-control" id="email" name="email"
-                                    placeholder="Email" required type="email" value="{{ old('email') }}">
-                                </input>
+                                    placeholder="Email" required type="email" value="{{ old('email') }}"/>
                             </div>
                         </div>
                         <div class="form-group">
@@ -67,8 +64,7 @@
                                     </span>
                                 </div>
                                 <input class="form-control" id="password" name="password" placeholder="Contraseña"
-                                    required type="password">
-                                </input>
+                                    required type="password"/>
                             </div>
                         </div>
                         <div class="form-group">
@@ -80,14 +76,13 @@
                                     </span>
                                 </div>
                                 <input class="form-control" id="new-password" name="password_confirmation"
-                                    placeholder="Confirmar Contraseña" required="" type="password">
-                                </input>
+                                    placeholder="Confirmar Contraseña" required="" type="password"/>
                             </div>
                         </div>
                         <div class="row my-4">
                             <div class="col-12">
                                 <div class="custom-control custom-control-alternative custom-checkbox">
-                                    <input class="custom-control-input" id="customCheckRegister" type="checkbox">
+                                    <input class="custom-control-input" id="customCheckRegister" type="checkbox"/>
                                     <label class="custom-control-label" for="customCheckRegister">
                                         <span class="text-muted">
                                             I agree with the
@@ -96,7 +91,6 @@
                                             </a>
                                         </span>
                                     </label>
-                                    </input>
                                 </div>
                             </div>
                         </div>

@@ -21,14 +21,24 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-//Specialty
-Route::get('/specialties', 'SpecialtyController@index')->name('Specialty');
-Route::get('/specialties/create', 'SpecialtyController@create')->name('SpecialtyCreate'); //registro
-Route::get('/specialties/{specialty}/edit', 'SpecialtyController@edit')->name('SpecialtyEdit');
 
-Route::post('/specialties', 'SpecialtyController@store'); // envio del form
-Route::put('/specialties/{specialty}','SpecialtyController@update');
-Route::delete('/specialties/{specialty}','SpecialtyController@destroy');
-//Doctors
-Route::resource('doctors','DoctorController');
-//Patients
+Route::middleware(['auth', 'admin'])->namespace('Admin')->group(function () {
+   //Specialtys
+    Route::get('/specialties', 'SpecialtyController@index')->name('Specialty');
+    Route::get('/specialties/create', 'SpecialtyController@create')->name('SpecialtyCreate'); //registro
+    Route::get('/specialties/{specialty}/edit', 'SpecialtyController@edit')->name('SpecialtyEdit');
+
+    Route::post('/specialties', 'SpecialtyController@store'); // envio del form
+    Route::put('/specialties/{specialty}','SpecialtyController@update');
+    Route::delete('/specialties/{specialty}','SpecialtyController@destroy');
+    //Doctors
+    Route::resource('doctors','DoctorController');
+    //Patients
+    Route::resource('patients','PatientController');
+});
+Route::middleware(['auth', 'doctor'])->namespace('Doctor')->group(function () {
+    Route::get('/schedule', 'ScheduleController@edit')->name('schedule');
+    Route::post('/schedule', 'ScheduleController@store');
+});
+
+
